@@ -22,36 +22,35 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* 2: My favorite 
     */
     KEYMAP_ANSI(
-        FN8, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSPC, \
+        FN8, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, FN9, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
         FN0,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
         LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT, \
-        LCTL,LGUI,LALT,          SPC,                     FN0, RALT, APP, RCTL),
+        LCTL,FN10,FN5,          SPC,                     FN0, RALT, APP, RCTL),
 
-    /* 3: Shift layout  useless*/
+    /* 3: Left Alt layout*/
     KEYMAP_ANSI(
-        GRV,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, DEL, \
+        TRNS,FN6,FN7,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
+        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
+        TRNS,TRNS,FN5,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
+
+    /* 4: Ctrl layout useless*/
+    KEYMAP_ANSI(
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
+        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
+        TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
+
+    /* 5: LGUI layout */
+    KEYMAP_ANSI(
+        5,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
-        TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
-
-    /* 4: spare layout 1*/
-    KEYMAP_ANSI(
-        4,1,2,3,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
-        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
-        TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
-
-    /* 5: spare layout 2*/
-    KEYMAP_ANSI(
-        5,1,2,3,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
-        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
-        TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
-
+        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS, \
+        TRNS,TRNS,TRNS,TRNS,FN11,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
+        TRNS,FN10,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
     /* 6 Fn layout
       v = FN6 = paste
@@ -87,14 +86,14 @@ const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_BACKLIGHT_DECREASE(),
     [2] = ACTION_BACKLIGHT_TOGGLE(),
     [3] = ACTION_BACKLIGHT_INCREASE(),
-    //[4] = ACTION_BACKLIGHT_INCREASE(),//spare
-//    [6] = ACTION_LAYER_MODS(4, MOD_LSFT),
-//    [7] = ACTION_LAYER_MODS(4, MOD_RSFT),
-    //[8] = ACTION_LAYER_MODS(5, MOD_LSFT),
+    //[4] = ACTION_LAYER_MODS(4, MOD_LCTL),
+    [5] = ACTION_LAYER_MODS(3, MOD_LALT),
+    [6] = ACTION_FUNCTION(MY_CHROME_PREV),
+    [7] = ACTION_FUNCTION(MY_CHROME_NEXT),
     [8] = ACTION_FUNCTION(TRICKY_ESC),
-    //[9] = ACTION_FUNCTION(BACKLIGHT_ENABLE),
-    //[10] = ACTION_FUNCTION(BACKLIGHT_INCREASE),
-    //[11] = ACTION_DEFAULT_LAYER_SET(1),  // spare
+    [9] = ACTION_FUNCTION(MY_BACKSPACE),
+    [10] = ACTION_LAYER_MODS(5, MOD_LGUI),
+    [11] = ACTION_FUNCTION(MY_UNIX_INSERT),
     [12] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 1),
     [13] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 2),
     [14] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 3),
@@ -114,15 +113,12 @@ uint16_t fn_actions_count(void) {
 #endif 
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
+{/*{{{*/
+    dprintf("Call macro pressed = %d \n", record->event.pressed);
     switch (id) {
         case MY_PASTE:
             return (record->event.pressed ?
                 MACRO(T(PSTE), END ) :
-                MACRO_NONE);
-        case MY_UNIX_INSERT:
-            return (record->event.pressed ?
-                MACRO(D(LSFT), T(INS), END ) :
                 MACRO_NONE);
         case KEYPAD_00:
             return (record->event.pressed ?
@@ -130,14 +126,14 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                     MACRO_NONE );
     }
     return MACRO_NONE;
-}
+}/*}}}*/
 
 
 #define MODS_SHIFT_MASK (MOD_BIT(KC_LSHIFT)|MOD_BIT(KC_RSHIFT))
 #define MODS_CTRL_MASK   (MOD_BIT(KC_LCTRL)|MOD_BIT(KC_RCTRL))
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
-{
+{/*{{{*/
     static uint8_t tricky_esc_registered;
     static uint8_t mod = 0;
     static uint8_t key;
@@ -159,6 +155,25 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
                 send_keyboard_report();
             }
             break;
+        case MY_BACKSPACE:
+            mod = get_mods();
+            if (record->event.pressed) {
+                if (mod & MODS_CTRL_MASK) {
+                    key = KC_DELETE;
+                }
+                else {
+                    key = KC_BSPC;
+                }
+                del_mods(mod);
+                add_key(key);
+                send_keyboard_report();
+                add_mods(mod);   // return Ctrl but not sent
+            } else {
+                del_key(key);
+                send_keyboard_report();
+            }
+            break;
+
        case MY_PG_CONTROL:
             //dprintf("in MY_PG_CONTROL opt = %d\n", opt);
             mod = get_mods();
@@ -191,5 +206,59 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
                 send_keyboard_report();         
             }
             break;
+        case MY_UNIX_INSERT:
+            mod = get_mods();
+            if (record->event.pressed) {
+                del_mods(mod);
+                add_mods(MOD_BIT(KC_LSHIFT));
+                add_key(KC_INS);
+                send_keyboard_report();
+                add_mods(mod);   // return mods but don't send
+            } else {
+                del_mods(MOD_BIT(KC_LSHIFT));
+                del_key(KC_INS);
+                send_keyboard_report();
+            }
+            break;
+        case MY_CHROME_PREV:
+        case MY_CHROME_NEXT:
+            handleChromeKey(record, id, opt);
+            break;
     }
+}/*}}}*/
+
+void handleChromeKey(keyrecord_t *record, uint8_t id, uint8_t opt) {
+    uint8_t mod = 0;
+    mod = get_mods();
+    if (record->event.pressed) {
+        switch (id) {
+            case MY_CHROME_PREV:
+
+                dprintf("Chrome prev");
+                del_mods(mod);
+                add_mods(MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT));
+                add_key(KC_TAB);
+                send_keyboard_report();
+
+                del_mods(MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT));
+                add_mods(mod);   // return alt but don't send
+                break;
+            case MY_CHROME_NEXT:
+                del_mods(mod);
+                add_mods(MOD_BIT(KC_LCTRL));
+                add_key(KC_TAB);
+                send_keyboard_report();
+                del_mods(MOD_BIT(KC_LCTRL));
+                add_mods(mod);   // return alt but don't send
+                break;
+        }
+    } else {
+        del_key(KC_TAB);
+        del_mods(MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT));
+        send_keyboard_report();
+    }
+
+
 }
+
+
