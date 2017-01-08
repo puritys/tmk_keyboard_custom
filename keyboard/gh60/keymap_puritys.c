@@ -114,7 +114,7 @@ uint16_t fn_actions_count(void) {
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {/*{{{*/
-    dprintf("Call macro pressed = %d \n", record->event.pressed);
+    //dprintf("Call macro pressed = %d \n", record->event.pressed);
     switch (id) {
         case MY_PASTE:
             return (record->event.pressed ?
@@ -233,8 +233,6 @@ void handleChromeKey(keyrecord_t *record, uint8_t id, uint8_t opt) {
     if (record->event.pressed) {
         switch (id) {
             case MY_CHROME_PREV:
-
-                dprintf("Chrome prev");
                 del_mods(mod);
                 add_mods(MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT));
                 add_key(KC_TAB);
