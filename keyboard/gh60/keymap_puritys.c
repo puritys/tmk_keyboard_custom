@@ -28,7 +28,15 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT, \
         LCTL,FN10,FN5,          SPC,                     FN0, RALT, APP, RCTL),
 
-    /* 3: Left Alt layout*/
+    /* 3: Mac layout */
+    KEYMAP_ANSI(
+        FN8, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, FN9, \
+        TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
+        FN0,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
+        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT, \
+        LCTL,LGUI,FN4,          SPC,                     FN0, RALT, APP, RCTL),
+
+    /* 4: Left Alt layout*/
     KEYMAP_ANSI(
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, DEL, \
         TRNS,FN6,FN7,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
@@ -36,13 +44,6 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
         TRNS,TRNS,FN5,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
-    /* 4: Ctrl layout useless*/
-    KEYMAP_ANSI(
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
-        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
-        TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
     /* 5: LGUI layout */
     KEYMAP_ANSI(
@@ -68,13 +69,22 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,FN1, FN2,FN3,FN6,TRNS,TRNS,TRNS,PGUP,PGDN,TRNS,         TRNS, \
         TRNS,TRNS,TRNS,          TRNS,                     TRNS,TRNS,TRNS,TRNS),
 
-    /*layout selector*/
+    /* 7: Left Alt for Mac */
+    KEYMAP_ANSI(
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, DEL, \
+        TRNS,FN19,FN20,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
+        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
+        TRNS,TRNS,FN4,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
+
+    /* 8 layout selector*/
     KEYMAP_ANSI(
         FN5, FN6, FN7, FN8, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
         TRNS,FN5, FN8, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
         TRNS,TRNS,TRNS,FN7, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS, \
         TRNS,TRNS,TRNS,FN6, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS, \
         TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
+
 
 };
 
@@ -86,10 +96,10 @@ const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_BACKLIGHT_DECREASE(),
     [2] = ACTION_BACKLIGHT_TOGGLE(),
     [3] = ACTION_BACKLIGHT_INCREASE(),
-    //[4] = ACTION_LAYER_MODS(4, MOD_LCTL),
-    [5] = ACTION_LAYER_MODS(3, MOD_LALT),
-    [6] = ACTION_FUNCTION(MY_CHROME_PREV),
-    [7] = ACTION_FUNCTION(MY_CHROME_NEXT),
+    [4] = ACTION_LAYER_MODS(7, MOD_LALT),
+    [5] = ACTION_LAYER_MODS(4, MOD_LALT),
+    [6] = ACTION_FUNCTION_OPT(MY_CHROME_PREV, 1),
+    [7] = ACTION_FUNCTION_OPT(MY_CHROME_NEXT, 1),
     [8] = ACTION_FUNCTION(TRICKY_ESC),
     [9] = ACTION_FUNCTION(MY_BACKSPACE),
     [10] = ACTION_LAYER_MODS(5, MOD_LGUI),
@@ -99,8 +109,11 @@ const uint16_t PROGMEM fn_actions[] = {
     [14] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 3),
     [15] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 4),
     [16] = ACTION_DEFAULT_LAYER_SET(0),  //layout 0
-    [17] = ACTION_DEFAULT_LAYER_SET(1),  //  layout 1 
+    [17] = ACTION_DEFAULT_LAYER_SET(1),  //  layout 1
     [18] = ACTION_DEFAULT_LAYER_SET(2),  //  layout 2
+    [19] = ACTION_FUNCTION_OPT(MY_CHROME_PREV, 2),//MAC
+    [20] = ACTION_FUNCTION_OPT(MY_CHROME_NEXT, 2), //MAC
+
 };
 
 #ifdef KEYMAP_IN_EEPROM_ENABLE
@@ -229,30 +242,38 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
 
 void handleChromeKey(keyrecord_t *record, uint8_t id, uint8_t opt) {
     uint8_t mod = 0;
+    uint8_t newMod = 0, newModNext = 0;
     mod = get_mods();
+    if (opt == 1) {
+        newMod = MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT);
+        newModNext = MOD_BIT(KC_LCTRL);
+    } else if (opt == 2) {//Mac
+        newMod = MOD_BIT(KC_LGUI) | MOD_BIT(KC_LSHIFT);
+        newModNext = MOD_BIT(KC_LGUI);
+    }
     if (record->event.pressed) {
         switch (id) {
             case MY_CHROME_PREV:
                 del_mods(mod);
-                add_mods(MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT));
+                add_mods(newMod);
                 add_key(KC_TAB);
                 send_keyboard_report();
 
-                del_mods(MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT));
+                del_mods(newMod);
                 add_mods(mod);   // return alt but don't send
                 break;
             case MY_CHROME_NEXT:
                 del_mods(mod);
-                add_mods(MOD_BIT(KC_LCTRL));
+                add_mods(newModNext);
                 add_key(KC_TAB);
                 send_keyboard_report();
-                del_mods(MOD_BIT(KC_LCTRL));
+                del_mods(newModNext);
                 add_mods(mod);   // return alt but don't send
                 break;
         }
     } else {
         del_key(KC_TAB);
-        del_mods(MOD_BIT(KC_LCTRL) | MOD_BIT(KC_LSHIFT));
+        del_mods(newMod);
         send_keyboard_report();
     }
 
