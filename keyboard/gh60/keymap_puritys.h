@@ -9,4 +9,5 @@ enum function_id {
     KEYPAD_00,
     MY_PASTE,
     MY_UNIX_INSERT,
+    MY_BACKLIGHT_ENABLE
 };
