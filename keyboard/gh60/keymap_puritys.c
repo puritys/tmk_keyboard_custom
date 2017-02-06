@@ -8,7 +8,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         GRV, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSPC, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
         CAPS,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
-        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT, \
+        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,     RSFT, RSFT,\
         LCTL,LGUI,LALT,          SPC,                     FN0, RGUI,APP, RCTL),
 
     /* layout 1: My Normal case */
@@ -16,7 +16,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN8, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSPC, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
         CAPS,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
-        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT, \
+        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,        RSFT,RSFT, \
         LCTL,LGUI,LALT,          SPC,                     RALT,FN0, APP, RCTL),
 
     /* 2: My favorite 
@@ -25,7 +25,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN8, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, FN9, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
         FN0,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
-        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT, \
+        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,        RSFT,RSFT, \
         LCTL,FN10,FN5,          SPC,                     FN0, RALT, APP, RCTL),
 
     /* 3: Mac layout */
@@ -33,7 +33,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN8, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, FN9, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
         FN0,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
-        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT, \
+        LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT,RSFT, \
         LCTL,LGUI,FN4,          SPC,                     FN0, RALT, APP, RCTL),
 
     /* 4: Left Alt layout*/
@@ -41,7 +41,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, DEL, \
         TRNS,FN6,FN7,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
         FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,        TRNS,TRNS, \
         TRNS,TRNS,FN5,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
 
@@ -50,7 +50,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         5,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
         FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,FN11,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
+        TRNS,TRNS,TRNS,TRNS,FN11,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,       TRNS,TRNS,   \
         TRNS,FN10,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
     /* 6 Fn layout
@@ -66,7 +66,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL, \
         CAPS,FN16, FN17, FN18,TRNS,TRNS,TRNS,PGUP,FN12,PGDN,PSCR,TRNS,INS, TRNS,  \
         FN0,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,FN14,FN13,FN15,END, TRNS,     TRNS, \
-        TRNS,FN1, FN2,FN3,FN11,FN21,TRNS,TRNS,PGUP,PGDN,TRNS,         TRNS, \
+        TRNS,FN1, FN2,FN3,FN11,FN21,TRNS,TRNS,PGUP,PGDN,TRNS,         TRNS,TRNS, \
         TRNS,TRNS,TRNS,          TRNS,                     TRNS,TRNS,TRNS,TRNS),
 
     /* 7: Left Alt for Mac */
@@ -74,7 +74,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, DEL, \
         TRNS,FN19,FN20,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,TRNS,TRNS,TRNS,TRNS,TRNS, \
         FN0,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,PGDN,END,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS,   \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS, TRNS,  \
         TRNS,TRNS,FN4,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
     /* 8 layout selector*/
@@ -82,7 +82,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN5, FN6, FN7, FN8, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
         TRNS,FN5, FN8, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
         TRNS,TRNS,TRNS,FN7, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,FN6, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,          TRNS, \
+        TRNS,TRNS,TRNS,FN6, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      TRNS,TRNS, \
         TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
 
