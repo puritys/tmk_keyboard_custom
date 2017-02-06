@@ -54,7 +54,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,FN10,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
 
     /* 6 Fn layout
-      v = FN6 = paste
+      v = FN11 = shift + insert
       q = FN16 = layout 0
       w = FN17 = laygout 1
       e = FN18 = layout 2
@@ -66,7 +66,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL, \
         CAPS,FN16, FN17, FN18,TRNS,TRNS,TRNS,PGUP,FN12,PGDN,PSCR,TRNS,INS, TRNS,  \
         FN0,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,FN14,FN13,FN15,END, TRNS,     TRNS, \
-        TRNS,FN1, FN2,FN3,FN6,FN21,TRNS,TRNS,PGUP,PGDN,TRNS,         TRNS, \
+        TRNS,FN1, FN2,FN3,FN11,FN21,TRNS,TRNS,PGUP,PGDN,TRNS,         TRNS, \
         TRNS,TRNS,TRNS,          TRNS,                     TRNS,TRNS,TRNS,TRNS),
 
     /* 7: Left Alt for Mac */
@@ -114,7 +114,6 @@ const uint16_t PROGMEM fn_actions[] = {
     [19] = ACTION_FUNCTION_OPT(MY_CHROME_PREV, 2),//MAC
     [20] = ACTION_FUNCTION_OPT(MY_CHROME_NEXT, 2), //MAC
     [21] = ACTION_FUNCTION(MY_BACKLIGHT_ENABLE),
-
 };
 
 #ifdef KEYMAP_IN_EEPROM_ENABLE
