@@ -26,15 +26,15 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
         FN0,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
         LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,        RSFT,RSFT, \
-        LCTL,FN10,FN5,          SPC,                     FN0, RALT, APP, RCTL),
+        LCTL,FN10,FN5,          SPC,                     FN0, FN0, FN0, RCTL),
 
     /* 3: Mac layout */
     KEYMAP_ANSI(
         FN8, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, FN9, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSLS, \
-        FN0,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
+        LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     ENT,  \
         LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          RSFT,RSFT, \
-        LCTL,LGUI,FN4,          SPC,                     FN0, RALT, APP, RCTL),
+        LCTL,LGUI,FN4,          SPC,                     FN0, NO, FN0, RCTL),
 
     /* 4: Left Alt layout*/
     KEYMAP_ANSI(
@@ -61,13 +61,15 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       z = FN1 = backlight decrease
       x = FN2 = backlight toggle
       c = FN3 = backlight increase
+      ; = FN22 = ' '
+      ' = FN23 = " "
      */
     KEYMAP_ANSI(
         GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL, \
-        CAPS,FN16, FN17, FN18,TRNS,TRNS,TRNS,PGUP,FN12,PGDN,PSCR,TRNS,INS, TRNS,  \
-        FN0,TRNS,TRNS,TRNS,TRNS,TRNS,HOME,FN14,FN13,FN15,END, TRNS,     TRNS, \
-        TRNS,FN1, FN2,FN3,FN11,FN21,TRNS,TRNS,PGUP,PGDN,TRNS,         TRNS,TRNS, \
-        TRNS,TRNS,TRNS,          TRNS,                     TRNS,TRNS,TRNS,TRNS),
+        CAPS,TRNS, TRNS, ENT,TRNS,TRNS,TRNS,PGUP,FN12,PGDN,PSCR,TRNS,INS, TRNS,  \
+        FN0,TRNS,TRNS,DEL,TRNS,TRNS,HOME,FN14,FN13,FN15,FN22, FN23,     TRNS, \
+        TRNS,FN1, FN2,FN3,FN11,BSPC,TRNS,TRNS,FN16,FN17,FN18,         TRNS,TRNS, \
+        TRNS,TRNS,TRNS,          TRNS,                     FN0,NO,FN0,TRNS),
 
     /* 7: Left Alt for Mac */
     KEYMAP_ANSI(
@@ -108,12 +110,15 @@ const uint16_t PROGMEM fn_actions[] = {
     [13] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 2),
     [14] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 3),
     [15] = ACTION_FUNCTION_OPT(MY_PG_CONTROL, 4),
-    [16] = ACTION_DEFAULT_LAYER_SET(0),  //layout 0
-    [17] = ACTION_DEFAULT_LAYER_SET(1),  //  layout 1
-    [18] = ACTION_DEFAULT_LAYER_SET(2),  //  layout 2
+    //[16] = ACTION_DEFAULT_LAYER_SET(0),  //layout 0, useless
+    //[17] = ACTION_DEFAULT_LAYER_SET(1),  //  layout 1, useless
+    //[18] = ACTION_DEFAULT_LAYER_SET(2),  //  layout 2, useless
     [19] = ACTION_FUNCTION_OPT(MY_CHROME_PREV, 2),//MAC
     [20] = ACTION_FUNCTION_OPT(MY_CHROME_NEXT, 2), //MAC
-    [21] = ACTION_FUNCTION(MY_BACKLIGHT_ENABLE),
+    //[21] = ACTION_FUNCTION(MY_BACKLIGHT_ENABLE),
+    [22] = ACTION_MACRO(MY_TYPE_SINGLE_QUOTE),
+    [23] = ACTION_MACRO(MY_TYPE_DOUBLE_QUOTE),
+
 };
 
 #ifdef KEYMAP_IN_EEPROM_ENABLE
@@ -127,12 +132,20 @@ uint16_t fn_actions_count(void) {
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {/*{{{*/
-    //dprintf("Call macro pressed = %d \n", record->event.pressed);
     switch (id) {
         case MY_PASTE:
             return (record->event.pressed ?
                 MACRO(T(PSTE), END ) :
                 MACRO_NONE);
+        case MY_TYPE_SINGLE_QUOTE:
+            return (record->event.pressed ?
+                MACRO( T(QUOT), T(QUOT), T(LEFT), END ) :
+                MACRO_NONE);
+        case MY_TYPE_DOUBLE_QUOTE:
+            return (record->event.pressed ?
+                MACRO(D(LSFT), T(QUOT), T(QUOT), U(LSFT), T(LEFT), END ) :
+                MACRO_NONE);
+
         case KEYPAD_00:
             return (record->event.pressed ?
                     MACRO( T(P0), T(P0), END ) :
@@ -186,7 +199,6 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
                 send_keyboard_report();
             }
             break;
-
        case MY_PG_CONTROL:
             //dprintf("in MY_PG_CONTROL opt = %d\n", opt);
             mod = get_mods();
